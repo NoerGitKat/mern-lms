@@ -1,1 +1,1 @@
-export { default as globalRouter } from "./global";
+export { default as globalRouter } from "./global.route";

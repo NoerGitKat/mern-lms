@@ -5,6 +5,7 @@ export function getHealthCheck(_req: Request, res: Response) {
 }
 
 export function handleNotFound(req: Request, res: Response, next: NextFunction) {
+  if (req.originalUrl === "/favicon.ico") next();
   const err = new Error(`Route ${req.originalUrl} not found.`);
   next(err);
 }

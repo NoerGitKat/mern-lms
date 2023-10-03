@@ -2,8 +2,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 import { globalRouter } from "./routes";
-import { handleNotFound } from "./controllers/global";
-import { catchErrorsMiddleware } from "./middlewares/error";
+import { handleNotFound } from "./controllers/global.controller";
+import { catchErrorsMiddleware } from "./middlewares";
 
 const app = express();
 

@@ -1,1 +1,1 @@
-export { getHealthCheck } from "./global";
+export { getHealthCheck } from "./global.controller";

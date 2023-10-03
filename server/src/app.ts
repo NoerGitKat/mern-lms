@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import { globalRouter } from "./routes";
 import { handleNotFound } from "./controllers/global";
+import { catchErrorsMiddleware } from "./middlewares/error";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(
     origin: "http://localhost:8000",
   }),
 );
+app.use(catchErrorsMiddleware);
 
 // Routes
 app.use("/api/v1", globalRouter);

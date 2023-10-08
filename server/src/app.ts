@@ -1,7 +1,7 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
-import { globalRouter } from "./routes";
+import { globalRouter, userRouter } from "./routes";
 import { handleNotFound } from "./controllers/global.controller";
 import { catchErrorsMiddleware } from "./middlewares";
 
@@ -18,6 +18,7 @@ app.use(
 app.use(catchErrorsMiddleware);
 
 // Routes
+app.use("/api/v1/user", userRouter);
 app.use("/api/v1", globalRouter);
 app.use("*", handleNotFound);
 
